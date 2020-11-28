@@ -1,0 +1,35 @@
+<div class="row">  
+    
+    
+    <div class=" col-md-8 ">
+        <h1>Lista de Comentarios</h1>
+    </div>
+    <div class=" col-md-4 ">       
+            <input type="button" class="btn btn-primary" style="margin-top: 10px;" [routerLink]="['/nuevocomentario']" value="Nueno comentario!" >
+    </div>
+    
+</div>
+<div class="spinner-border text-primary" role="status" *ngIf="loading">
+  <span class="sr-only">Loading...</span>
+</div>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>        
+        <th scope="col">Titulo</th>
+        <th scope="col">Autor</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let lc of listaComentario"> 
+        <th scope="row">{{lc.id}}</th>
+        <td><a [routerLink]="['/ver/',lc.id]">{{lc.titulo}}</a></td>
+        <td>{{lc.creador}}</td>
+        <td>{{lc.fecha | date:'dd/MM/yyyy'}}</td>        
+        <td><input class="btn btn-info" type="button" value="Editar" [routerLink]="['/editar/',lc.id]">|<button type="button" class="btn btn-danger">Eliminar</button></td>
+      </tr>
+      
+    </tbody>
+  </table>

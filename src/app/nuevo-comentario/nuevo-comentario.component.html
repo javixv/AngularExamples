@@ -1,0 +1,29 @@
+<div class="row"> 
+    <h1>{{accion}}</h1>
+    </div>
+    <form [formGroup] = "comentarios" (submit)='guardarComentario()'>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Titulo</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName='titulo'>    
+          <small id="emailHelp" class="form-text text-danger" *ngIf='comentarios.get("titulo").hasError("required") && comentarios.get("titulo").touched'>Requerido Titulo.</small>
+        </div>
+        
+        <div class="form-group">
+            <label for="exampleInputEmail1">Autor</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName='autor'>    
+            <small id="emailHelp" class="form-text text-danger" *ngIf='comentarios.get("autor").hasError("required") && comentarios.get("autor").touched'>Requerido Autor.</small>  
+          </div>
+          
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Contenido</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName='texto'></textarea>
+            <small id="emailHelp" class="form-text text-danger" *ngIf='comentarios.get("texto").hasError("required") && comentarios.get("texto").touched'>Requerido Contenido.</small>
+          </div>
+        
+          <div class="form-group">
+        <button type="submit" class="btn btn-md btn-primary float-rigth" style="float:right;" [disabled]='comentarios.invalid' >Enviar</button>
+        <button type="submit" class="btn btn-md btn-danger float-left" [routerLink] = "['/comentarios']">Cancelar</button>
+          </div>
+        
+      </form>
+    
