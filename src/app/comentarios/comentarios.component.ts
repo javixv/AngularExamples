@@ -8,7 +8,7 @@ import { ComentariosService } from '../service/comentarios.service';
   styleUrls: ['./comentarios.component.css']
 })
 export class ComentariosComponent implements OnInit {
-
+ 
   listaComentario : comentarios[];
   loading = false;
   constructor(private comentarioService : ComentariosService) { }
