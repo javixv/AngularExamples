@@ -13,6 +13,7 @@ import { NuevoDatoComponent } from './nuevo-dato/nuevo-dato.component';
 import { ComentariosComponent } from './comentarios/comentarios.component';
 import { NuevoComentarioComponent } from './nuevo-comentario/nuevo-comentario.component';
 import { VerComentarioComponent } from './ver-comentario/ver-comentario.component';
+import { FormularioComponent } from './formulario/formulario.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { VerComentarioComponent } from './ver-comentario/ver-comentario.componen
     NuevoDatoComponent,
     NuevoComentarioComponent,
     ComentariosComponent,    
-    VerComentarioComponent
+    VerComentarioComponent, FormularioComponent
   ],
   imports: [
     BrowserModule,
